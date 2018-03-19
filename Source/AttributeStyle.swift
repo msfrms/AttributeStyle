@@ -85,6 +85,8 @@ public class AttributeStyle {
         case underline(NSUnderlineStyle)
     }
 
+    public init() {}
+
     public func font(_ font: UIFont) -> AttributeStyle {
         self.styles[NSAttributedStringKey.font] = font
         return self
