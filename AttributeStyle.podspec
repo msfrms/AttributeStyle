@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name             = "AttributeStyle"
   s.version          = "0.1"
   s.summary          = "Simple wrapper of NSAttributedString"
-  s.homepage         = "https://github.com/msfrms/AttrubuteStyle"
+  s.homepage         = "https://github.com/msfrms/AttributeStyle"
   s.license          = 'Apache License 2.0'
   s.author           = { "msfrms" => "msfrms@gmail.com" }
 
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
-  s.source           = { :git => 'https://github.com/msfrms/AttrubuteStyle' }
+  s.source           = { :git => 'https://github.com/msfrms/AttributeStyle' }
   s.source_files	 = 'Source/*.swift'
 
   s.frameworks       = 'Foundation'
