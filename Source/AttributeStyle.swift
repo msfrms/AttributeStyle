@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public extension Float {
-    var cgFloat: CGFloat { return CGFloat(self) }
+    public var cgFloat: CGFloat { return CGFloat(self) }
 }
 
 public extension Dictionary {
@@ -25,11 +25,11 @@ public extension Dictionary {
 }
 
 public extension NSAttributedString {
-    static var empty: NSAttributedString { return NSAttributedString() }
+    public static var empty: NSAttributedString { return NSAttributedString() }
 }
 
 public extension String {
-    func with(style: AttributeStyle) -> NSAttributedString {
+   public func with(style: AttributeStyle) -> NSAttributedString {
         return NSAttributedString(string: self, attributes: style.build())
     }
 }
