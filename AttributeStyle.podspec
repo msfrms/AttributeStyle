@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
-  s.source           = { :git => 'https://github.com/msfrms/AttributeStyle' }
+  s.source           = { :git => 'https://github.com/msfrms/AttributeStyle.git', :tag => s.version }
   s.source_files	 = 'Source/*.swift'
 
-  s.frameworks       = 'Foundation'
+  s.frameworks       = 'Foundation', 'UIKit'
   s.module_name      = 'AttributeStyle'
   
 end
