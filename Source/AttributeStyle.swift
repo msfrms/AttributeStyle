@@ -42,7 +42,7 @@ public func + (lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributed
 }
 
 public class AttributeStyle {
-    private var styles = Dictionary<NSAttributedStringKey, Any>()
+    private var styles = Dictionary<NSAttributedString.Key, Any>()
     private let paragraph = NSMutableParagraphStyle()
 
     public enum Color {
@@ -88,22 +88,22 @@ public class AttributeStyle {
     public init() {}
 
     public func font(_ font: UIFont) -> AttributeStyle {
-        self.styles[NSAttributedStringKey.font] = font
+        self.styles[NSAttributedString.Key.font] = font
         return self
     }
 
     public func color(_ color: Color) -> AttributeStyle {
         switch color {
         case .background(let value):
-            self.styles[NSAttributedStringKey.backgroundColor] = value
+            self.styles[NSAttributedString.Key.backgroundColor] = value
         case .foreground(let value):
-            self.styles[NSAttributedStringKey.foregroundColor] = value
+            self.styles[NSAttributedString.Key.foregroundColor] = value
         case .strikethrough(let value):
-            self.styles[NSAttributedStringKey.strikethroughColor] = value
+            self.styles[NSAttributedString.Key.strikethroughColor] = value
         case .stroke(let value):
-            self.styles[NSAttributedStringKey.strokeColor] = value
+            self.styles[NSAttributedString.Key.strokeColor] = value
         case .underline(let value):
-            self.styles[NSAttributedStringKey.underlineColor] = value
+            self.styles[NSAttributedString.Key.underlineColor] = value
         }
 
         return self
@@ -161,9 +161,9 @@ public class AttributeStyle {
     public func style(_ style: Style) -> AttributeStyle {
         switch style {
         case .strikethrough(let value):
-            self.styles[NSAttributedStringKey.strikethroughStyle] = value
+            self.styles[NSAttributedString.Key.strikethroughStyle] = value
         case .underline(let value):
-            self.styles[NSAttributedStringKey.underlineStyle] = value
+            self.styles[NSAttributedString.Key.underlineStyle] = value
         }
         return self
     }
@@ -174,42 +174,42 @@ public class AttributeStyle {
     }
 
     public func stroke(width: Float) -> AttributeStyle {
-        self.styles[NSAttributedStringKey.strokeWidth] = width.cgFloat
+        self.styles[NSAttributedString.Key.strokeWidth] = width.cgFloat
         return self
     }
 
     public func baseline(offset: Float) -> AttributeStyle {
-        self.styles[NSAttributedStringKey.baselineOffset] = offset.cgFloat
+        self.styles[NSAttributedString.Key.baselineOffset] = offset.cgFloat
         return self
     }
 
     public func text(effect: String) -> AttributeStyle {
-        self.styles[NSAttributedStringKey.textEffect] = effect
+        self.styles[NSAttributedString.Key.textEffect] = effect
         return self
     }
 
     public func shadow(_ shadow: NSShadow) -> AttributeStyle {
-        self.styles[NSAttributedStringKey.shadow] = shadow
+        self.styles[NSAttributedString.Key.shadow] = shadow
         return self
     }
 
     public func kern(_ kern: Float) -> AttributeStyle {
-        self.styles[NSAttributedStringKey.kern] = kern.cgFloat
+        self.styles[NSAttributedString.Key.kern] = kern.cgFloat
         return self
     }
 
     public func ligature(_ ligature: Int) -> AttributeStyle {
-        self.styles[NSAttributedStringKey.ligature] = ligature
+        self.styles[NSAttributedString.Key.ligature] = ligature
         return self
     }
 
     public func build() -> Dictionary<String, Any> {
-        self.styles[NSAttributedStringKey.paragraphStyle] = self.paragraph
+        self.styles[NSAttributedString.Key.paragraphStyle] = self.paragraph
         return self.styles.map { key, value  in return (key.rawValue, value) }
     }
 
-    public func build() -> Dictionary<NSAttributedStringKey, Any> {
-        self.styles[NSAttributedStringKey.paragraphStyle] = self.paragraph
+    public func build() -> Dictionary<NSAttributedString.Key, Any> {
+        self.styles[NSAttributedString.Key.paragraphStyle] = self.paragraph
         return self.styles
     }
 }
